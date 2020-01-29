@@ -1,0 +1,200 @@
+body {
+    background-color: #eaedf1;
+}
+
+/* ......................HEAD........................ */
+                
+/* ................................................. */
+
+.head {
+    width: 100%;
+    height: 475px;
+    margin: 0;
+}
+
+.head-profile {
+    position: absolute;
+    margin-left: 98px;
+    margin-top: 102px;
+    width: 542px;
+    height: 369px;
+    background-color: #ffffff;
+    border-radius: 3px;
+}
+
+.head-profile > .picture {
+    position: relative;
+    width: 183px;
+    height: 185px;
+    float: left;
+    margin-left: 33px;
+    margin-top: 43px;
+    border-radius: 100px;
+    background: #ffffff url(Icons/profile-photo.png) no-repeat;
+}
+
+.head-profile .username {
+    position: relative;
+    float: right;
+    width: 240px;
+    height: 70px;
+    margin-top: 96px;
+    margin-right: 40px;
+    color: #5C6C7C;
+    font-size: 22px;
+    font-family: "Lato", sans-serif;
+}
+
+.head-profile .username h1 {
+    font-weight: normal;
+    font-size: 38px;
+    margin: 0;
+    margin-top: -8px;
+    font-family: Signika Negative;
+    color: #33495f;
+}
+
+.username p {
+    margin-top: 6px;
+}
+
+.head-profile .userinfo {
+    position: relative;
+    width: 542px;
+    height: 100px;
+    top: 41px;
+    left: 0px;
+    clear: both;
+}
+
+.head-profile .userinfo .info-1 {
+    float: left;
+    width: 135px;
+    height: inherit;
+    background: #16c4ec url(Icons/eye-profile.png) no-repeat 50% 30%;
+}
+
+.info-1 samp {
+    display: inline-block;
+    position: relative;
+    left: 32%;
+    top: 50%;
+    color: #f5fbfe;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+}
+
+.head-profile .userinfo .info-2 {
+    float: left;
+    width: 137px;
+    height: inherit;
+    background: #fa5351 url(Icons/flag-profile.png) no-repeat 50% 30%;
+}
+
+.info-2 samp {
+    display: inline-block;
+    position: relative;
+    left: 23%;
+    top: 50%;
+    color: #f5fbfe;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+}
+
+.head-profile .userinfo .info-3 {
+    float: left;
+    width: 135px;
+    height: inherit;
+    background: #10cdc1 url(Icons/car-profile.png) no-repeat 50% 30%;
+}
+
+.info-3 samp {
+    display: inline-block;
+    position: relative;
+    left: 26%;
+    top: 50%;
+    color: #f5fbfe;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+}
+
+.head-profile .userinfo .info-4 {
+    float: left;
+    width: 135px;
+    height: inherit;
+    background: #33495f url(Icons/cigarette-profile.png) no-repeat 50% 30%;
+}
+
+.info-4 samp {
+    display: inline-block;
+    position: relative;
+    left: 38%;
+    top: 50%;
+    color: #f5fbfe;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+}
+
+.head-mail {
+    position: absolute;
+    width: 1029px;
+    height: 369px;
+    margin-left: 752px;
+    margin-top: 102px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+} 
+
+.head-mail > .main-info {
+    float: left;
+    width: 510px;
+    height: 205px;
+    margin-left: 40px;
+    margin-top: 55px;
+    font-family: Signika Negative;
+    font-size: 22px;
+    text-align: justify;
+    color: #3E5267;
+}
+
+.main-info > h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: normal;
+    color: #33495F;
+    vertical-align: top;
+}
+
+.main-info > p {
+    margin-top: 15px;
+    line-height: 35px;
+}
+
+.main-info span {
+    font-weight: bold;
+}
+
+.main-info a {
+    text-decoration: none;
+    color: #69D7F2;
+}
+
+.head-mail > .mail-rel {
+    width: 350px;
+    height: 130px;
+    float: right;
+    margin-right: 40px;
+    margin-top: 135px;
+    font-size: 28px;
+    font-family: Signika;
+    text-align: justify;
+    color: #3E5267;
+}
+
+.mail-rel a {
+    text-decoration: none;
+}
