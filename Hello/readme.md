@@ -23,7 +23,7 @@ Latest release | 1.0.1 (December 17, 2004 (13 years ago)[5])
 Type of format | Markup language
 Extended to | MultiMarkdown, Markdown Extra, CommonMark[6]
 Open format? | yes[7]
-Website | [http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown
+Website | [http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown)
 
 ### Реальный пример
 [https://github.com/Microsoft/TypeScript/blob/master/README.md ](https://github.com/Microsoft/TypeScript/blob/master/README.md )
