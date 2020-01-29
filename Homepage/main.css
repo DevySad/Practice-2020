@@ -14,62 +14,65 @@ body {
 
 .head-profile {
     position: absolute;
-    margin-left: 98px;
-    margin-top: 102px;
-    width: 542px;
-    height: 369px;
+    margin-left: 88px;
+    margin-top: 92px;
+    width: 435px;
+    height: 295px;
     background-color: #ffffff;
     border-radius: 3px;
 }
 
 .head-profile > .picture {
     position: relative;
-    width: 183px;
-    height: 185px;
+    width: 146px;
+    height: 150px;
     float: left;
-    margin-left: 33px;
-    margin-top: 43px;
+    margin-left: 27px;
+    margin-top: 33px;
     border-radius: 100px;
-    background: #ffffff url(Icons/profile-photo.png) no-repeat;
+    background: #ffffff url(Icons/profile-photo.png) no-repeat ;
 }
 
 .head-profile .username {
     position: relative;
     float: right;
-    width: 240px;
-    height: 70px;
-    margin-top: 96px;
-    margin-right: 40px;
+    width: 185px;
+    height: 55px;
+    margin-top: 82px;
+    margin-right: 33px;
     color: #5C6C7C;
-    font-size: 22px;
+    font-size: 17px;
     font-family: "Lato", sans-serif;
 }
 
 .head-profile .username h1 {
     font-weight: normal;
-    font-size: 38px;
+    font-size: 30px;
     margin: 0;
-    margin-top: -8px;
+    margin-top: -5px;
+    margin-left: -3px;
     font-family: Signika Negative;
     color: #33495f;
 }
 
 .username p {
-    margin-top: 6px;
+    margin: 0;
+    margin-left: -2px;
+    margin-top: 3px;
 }
 
 .head-profile .userinfo {
     position: relative;
-    width: 542px;
-    height: 100px;
-    top: 41px;
+    width: 435px;
+    height: 80px;
+    top: 32px;
     left: 0px;
     clear: both;
 }
 
 .head-profile .userinfo .info-1 {
     float: left;
-    width: 135px;
+    width: 109px;
     height: inherit;
     background: #16c4ec url(Icons/eye-profile.png) no-repeat 50% 30%;
 }
@@ -77,7 +80,7 @@ body {
 .info-1 samp {
     display: inline-block;
     position: relative;
-    left: 32%;
+    left: 29%;
     top: 50%;
     color: #f5fbfe;
     text-transform: uppercase;
@@ -87,12 +90,30 @@ body {
 
 .head-profile .userinfo .info-2 {
     float: left;
-    width: 137px;
+    width: 109px;
     height: inherit;
     background: #fa5351 url(Icons/flag-profile.png) no-repeat 50% 30%;
 }
 
 .info-2 samp {
+    display: inline-block;
+    position: relative;
+    left: 16%;
+    top: 50%;
+    color: #f5fbfe;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+}
+
+.head-profile .userinfo .info-3 {
+    float: left;
+    width: 108px;
+    height: inherit;
+    background: #10cdc1 url(Icons/car-profile.png) no-repeat 50% 30%;
+}
+
+.info-3 samp {
     display: inline-block;
     position: relative;
     left: 23%;
@@ -103,27 +124,9 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-.head-profile .userinfo .info-3 {
-    float: left;
-    width: 135px;
-    height: inherit;
-    background: #10cdc1 url(Icons/car-profile.png) no-repeat 50% 30%;
-}
-
-.info-3 samp {
-    display: inline-block;
-    position: relative;
-    left: 26%;
-    top: 50%;
-    color: #f5fbfe;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-family: "Lato", sans-serif;
-}
-
 .head-profile .userinfo .info-4 {
     float: left;
-    width: 135px;
+    width: 109px;
     height: inherit;
     background: #33495f url(Icons/cigarette-profile.png) no-repeat 50% 30%;
 }
@@ -131,7 +134,7 @@ body {
 .info-4 samp {
     display: inline-block;
     position: relative;
-    left: 38%;
+    left: 36%;
     top: 50%;
     color: #f5fbfe;
     text-transform: uppercase;
@@ -141,37 +144,40 @@ body {
 
 .head-mail {
     position: absolute;
-    width: 1029px;
-    height: 369px;
-    margin-left: 752px;
-    margin-top: 102px;
+    width: 825px;
+    height: 295px;
+    margin-left: 612px;
+    margin-top: 92px;
     background-color: #FFFFFF;
     border-radius: 3px;
 } 
 
 .head-mail > .main-info {
     float: left;
-    width: 510px;
-    height: 205px;
-    margin-left: 40px;
-    margin-top: 55px;
-    font-family: Signika Negative;
-    font-size: 22px;
+    width: 405px;
+    height: 165px;
+    margin-left: 33px;
+    margin-top: 50px;
+    font-family: Lato;
+    font-size: 18px;
     text-align: justify;
     color: #3E5267;
 }
 
 .main-info > h1 {
-    font-size: 48px;
+    font-size: 38px;
     margin: 0;
+    margin-left: -3px;
+    margin-top: -8px;
     font-weight: normal;
     color: #33495F;
+    font-family: Signika Negative;
     vertical-align: top;
 }
 
 .main-info > p {
-    margin-top: 15px;
-    line-height: 35px;
+    margin-top: 10px;
+    line-height: 29px;
 }
 
 .main-info span {
@@ -180,21 +186,34 @@ body {
 
 .main-info a {
     text-decoration: none;
-    color: #69D7F2;
+    color: #16C4EC;
 }
 
 .head-mail > .mail-rel {
-    width: 350px;
-    height: 130px;
+    width: 277px;
+    height: 101px;
     float: right;
-    margin-right: 40px;
-    margin-top: 135px;
-    font-size: 28px;
+    margin-right: 38px;
+    margin-top: 110px;
+    font-size: 23px;
     font-family: Signika;
     text-align: justify;
     color: #3E5267;
+    border-bottom: 1px solid #788695;
+}
+
+.mail-rel span {
+    display: block;
+    margin: 0;
+    margin-top: -5px;
+    margin-left: -2px;
 }
 
 .mail-rel a {
+    display: block;
     text-decoration: none;
+    margin: 0;
+    margin-top: -8px;
+    color: #FA5351;
+    letter-spacing: 2px;
 }
