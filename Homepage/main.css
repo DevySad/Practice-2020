@@ -1174,31 +1174,18 @@ body {
     margin-top: 12px;
 }
 
-.stars .s-1, .s-2, .s-3, .s-4, .s-5 {
+.cefire > .enter .stars .s-1, .s-2, .s-3, .s-4 {
     float: left;
     height: inherit;
     width: 20px;
-    background: url(Icons/star.png) no-repeat 0px 5px;
-}
-
-.stars .s-1:hover {
     background: url(Icons/star-grey.png) no-repeat 0px 5px;
 }
 
-.stars .s-2:hover {
-    background: url(Icons/star-grey.png) no-repeat 0px 5px;
-}
-
-.stars .s-3:hover {
-    background: url(Icons/star-grey.png) no-repeat 0px 5px;
-}
-
-.stars .s-4:hover {
-    background: url(Icons/star-grey.png) no-repeat 0px 5px;
-}
-
-.stars .s-5:hover {
-    background: url(Icons/star-grey.png) no-repeat 0px 5px;
+.cefire > .enter .stars .s-5 {
+    float: left;
+    height: inherit;
+    width: 20px;
+    background: url(Icons/star-half.png) no-repeat -2px 4px;
 }
 
 /*  */
@@ -1305,31 +1292,25 @@ body {
     margin-top: 12px;
 }
 
-.stars .s-1, .s-2, .s-3, .s-4, .s-5 {
+ .ecole .enter .stars .s-1, .s-2, .s-3 {
+    float: left;
+    height: inherit;
+    width: 20px;
+    background: url(Icons/star-grey.png) no-repeat 0px 5px;
+} 
+
+.ecole .enter .stars .s-3 {
+    float: left;
+    height: inherit;
+    width: 20px;
+    background: url(Icons/star-half.png) no-repeat 0px 4px;
+}
+
+.ecole .enter .stars .s-4, .s-5 {
     float: left;
     height: inherit;
     width: 20px;
     background: url(Icons/star.png) no-repeat 0px 5px;
-}
-
-.stars .s-1:hover {
-    background: url(Icons/star-grey.png) no-repeat 0px 5px;
-}
-
-.stars .s-2:hover {
-    background: url(Icons/star-grey.png) no-repeat 0px 5px;
-}
-
-.stars .s-3:hover {
-    background: url(Icons/star-grey.png) no-repeat 0px 5px;
-}
-
-.stars .s-4:hover {
-    background: url(Icons/star-grey.png) no-repeat 0px 5px;
-}
-
-.stars .s-5:hover {
-    background: url(Icons/star-grey.png) no-repeat 0px 5px;
 }
 
 .main-right .stat {
@@ -1543,7 +1524,7 @@ body {
 .pr-1 .note {
     position: relative; 
     background: #ffffff; 
-    height: 22px;
+    height: 23px;
     width: 38px;
     left: 217px;
     top: -23px;
@@ -1557,9 +1538,10 @@ body {
 
 .pr-1 .per-cent {
     position: relative;
-    margin-top: 2px;
+    margin-top: 1px;
     width: 38px;
     height: 17px;
+    padding-top: 1px;
     border-radius: 5px;
     background-color: #34495E;
 }
@@ -1580,7 +1562,7 @@ body {
 }
 
 .pr-1 .progress {
-    margin-top: -20px;
+    margin-top: -21px;
     margin-left: 20px;
     width: 270px;
     border-radius: 1.5em;
@@ -1608,9 +1590,9 @@ body {
 .pr-2 .note {
     position: relative; 
     background: #ffffff; 
-    height: 22px;
+    height: 24px;
     width: 38px;
-    left: 145px;
+    left: 144px;
     top: -25px;
     border-radius: 5px;
     font-size: 11px;
@@ -1624,7 +1606,8 @@ body {
     position: relative;
     margin-top: 2px;
     width: 38px;
-    height: 17px;
+    height: 16px;
+    padding-top: 2px;
     border-radius: 5px;
     background-color: #34495E;
 }
@@ -1632,9 +1615,9 @@ body {
 .pr-2 .note::after {
     content: ''; 
     position: absolute; 
-    top: 12px; right: 9px;
+    top: 14px; right: 9px;
     width: 0; height: 0;
-    border: 9px solid transparent;	border-top: 9px solid #34495E;
+    border: 10px solid transparent;	border-top: 9px solid #34495E;
 }
 
 .pr-2 .pr-bar {
@@ -1645,7 +1628,7 @@ body {
 }
 
 .pr-2 .progress {
-    margin-top: -19px;
+    margin-top: -21px;
     margin-left: 20px;
     width: 270px;
     border-radius: 1.5em;
@@ -1673,9 +1656,9 @@ body {
 .pr-3 .note {
     position: relative; 
     background: #ffffff; 
-    height: 22px;
+    height: 23px;
     width: 38px;
-    left: 250px;
+    left: 251px;
     top: -23px;
     border-radius: 5px;
     font-size: 11px;
@@ -1689,7 +1672,8 @@ body {
     position: relative;
     margin-top: 2px;
     width: 38px;
-    height: 17px;
+    height: 16px;
+    padding-top: 2px;
     border-radius: 5px;
     background-color: #34495E;
 }
@@ -1697,9 +1681,9 @@ body {
 .pr-3 .note::after {
     content: ''; 
     position: absolute; 
-    top: 12px; right: 9px;
+    top: 14px; right: 9px;
     width: 0; height: 0;
-    border: 9px solid transparent;	border-top: 9px solid #34495E;
+    border: 10px solid transparent;	border-top: 9px solid #34495E;
 }
 
 .pr-3 .pr-bar {
@@ -1710,7 +1694,7 @@ body {
 }
 
 .pr-3 .progress {
-    margin-top: -17px;
+    margin-top: -19px;
     margin-left: 20px;
     width: 270px;
     border-radius: 1.5em;
@@ -1738,10 +1722,10 @@ body {
 .pr-4 .note {
     position: relative; 
     background: #ffffff; 
-    height: 22px;
+    height: 23px;
     width: 38px;
-    left: 227px;
-    top: -23px;
+    left: 226px;
+    top: -24px;
     border-radius: 5px;
     font-size: 11px;
     font-family: Signika Negative;
@@ -1754,7 +1738,8 @@ body {
     position: relative;
     margin-top: 2px;
     width: 38px;
-    height: 17px;
+    height: 15px;
+    padding-top: 2px;
     border-radius: 5px;
     background-color: #34495E;
 }
@@ -1762,7 +1747,7 @@ body {
 .pr-4 .note::after {
     content: ''; 
     position: absolute; 
-    top: 12px; right: 9px;
+    top: 14px; right: 9px;
     width: 0; height: 0;
     border: 9px solid transparent;	border-top: 9px solid #34495E;
 }
@@ -1775,7 +1760,7 @@ body {
 }
 
 .pr-4 .progress {
-    margin-top: -19px;
+    margin-top: -20px;
     margin-left: 20px;
     width: 270px;
     border-radius: 1.5em;
@@ -1819,8 +1804,8 @@ body {
     background: #ffffff; 
     height: 22px;
     width: 38px;
-    left: 188px;
-    top: -24px;
+    left: 186px;
+    top: -25px;
     border-radius: 5px;
     font-size: 11px;
     font-family: Signika Negative;
@@ -1833,7 +1818,8 @@ body {
     position: relative;
     margin-top: 2px;
     width: 38px;
-    height: 17px;
+    height: 15px;
+    padding-top: 2px;
     border-radius: 5px;
     background-color: #34495E;
 }
@@ -1841,9 +1827,9 @@ body {
 .pr-5 .note::after {
     content: ''; 
     position: absolute; 
-    top: 12px; right: 9px;
+    top: 14px; right: 9px;
     width: 0; height: 0;
-    border: 9px solid transparent;	border-top: 9px solid #34495E;
+    border: 9px solid transparent;	border-top: 8px solid #34495E;
 }
 
 .pr-5 .pr-bar {
@@ -1855,7 +1841,7 @@ body {
 
 .pr-5 .progress {
     margin-top: -20px;
-    margin-left: 20px;
+    margin-left: 17px;
     width: 270px;
     border-radius: 1.5em;
     height: 13px;
@@ -1882,10 +1868,10 @@ body {
 .pr-6 .note {
     position: relative; 
     background: #ffffff; 
-    height: 22px;
+    height: 23px;
     width: 38px;
-    left: 205px;
-    top: -24px;
+    left: 202px;
+    top: -25px;
     border-radius: 5px;
     font-size: 11px;
     font-family: Signika Negative;
@@ -1898,7 +1884,8 @@ body {
     position: relative;
     margin-top: 2px;
     width: 38px;
-    height: 17px;
+    height: 15px;
+    padding-top: 2px;
     border-radius: 5px;
     background-color: #34495E;
 }
@@ -1906,9 +1893,9 @@ body {
 .pr-6 .note::after {
     content: ''; 
     position: absolute; 
-    top: 12px; right: 9px;
+    top: 14px; right: 9px;
     width: 0; height: 0;
-    border: 9px solid transparent;	border-top: 9px solid #34495E;
+    border: 9px solid transparent;	border-top: 8px solid #34495E;
 }
 
 .pr-6 .pr-bar {
@@ -1919,8 +1906,8 @@ body {
 }
 
 .pr-6 .progress {
-    margin-top: -19px;
-    margin-left: 20px;
+    margin-top: -20px;
+    margin-left: 17px;
     width: 270px;
     border-radius: 1.5em;
     height: 13px;
@@ -1949,7 +1936,7 @@ body {
     background: #ffffff; 
     height: 22px;
     width: 38px;
-    left: 155px;
+    left: 153px;
     top: -24px;
     border-radius: 5px;
     font-size: 11px;
@@ -1963,7 +1950,8 @@ body {
     position: relative;
     margin-top: 2px;
     width: 38px;
-    height: 17px;
+    height: 15px;
+    padding-top: 2px;
     border-radius: 5px;
     background-color: #34495E;
 }
@@ -1971,9 +1959,9 @@ body {
 .pr-7 .note::after {
     content: ''; 
     position: absolute; 
-    top: 12px; right: 9px;
+    top: 14px; right: 9px;
     width: 0; height: 0;
-    border: 9px solid transparent;	border-top: 9px solid #34495E;
+    border: 9px solid transparent;	border-top: 8px solid #34495E;
 }
 
 .pr-7 .pr-bar {
@@ -1985,7 +1973,7 @@ body {
 
 .pr-7 .progress {
     margin-top: -19px;
-    margin-left: 20px;
+    margin-left: 17px;
     width: 270px;
     border-radius: 1.5em;
     height: 13px;
@@ -2014,7 +2002,7 @@ body {
     background: #ffffff; 
     height: 22px;
     width: 38px;
-    left: 188px;
+    left: 186px;
     top: -24px;
     border-radius: 5px;
     font-size: 11px;
@@ -2028,21 +2016,22 @@ body {
     position: relative;
     margin-top: 2px;
     width: 38px;
-    height: 17px;
+    height: 15px;
     border-radius: 5px;
+    padding-top: 2px;
     background-color: #34495E;
 }
 
 .pr-8 .note::after {
     content: ''; 
     position: absolute; 
-    top: 12px; right: 9px;
+    top: 14px; right: 9px;
     width: 0; height: 0;
-    border: 9px solid transparent;	border-top: 9px solid #34495E;
+    border: 9px solid transparent;	border-top: 8px solid #34495E;
 }
 
 .pr-8 .pr-bar {
-    width: 185px;
+    width: 188px;
     height: 13px;
     border-radius: 1.5em;
     background-color: #16C4EC;
@@ -2050,7 +2039,7 @@ body {
 
 .pr-8 .progress {
     margin-top: -19px;
-    margin-left: 20px;
+    margin-left: 17px;
     width: 270px;
     border-radius: 1.5em;
     height: 13px;
