@@ -35,11 +35,15 @@ function init() {
     });
 
     megalithInit();
+    
     mannaInit();
-
+    
     reset();
     lastTime = Date.now();
+    
+    checkMannaPlayer();
     main();
+    checkMegPlayer();
 }
 
 resources.load([
@@ -79,8 +83,8 @@ function mannaInit()
     while (manna.length < 3)
     {
         manna.push({
-            pos: [Math.floor(Math.random() * ((canvas.width - 40) + 1)) + 10,
-                Math.floor(Math.random() * ((canvas.height - 40) + 1)) + 10 + megalith.length],
+            pos: [Math.floor(Math.random() * ((canvas.width - 100) + 1)) + 10,
+                Math.floor(Math.random() * ((canvas.height - 100) + 1))],
             sprite: new Sprite('img/sprites.png', [0, 165], [55, 45], 5, [0, 1])
         });
     }
@@ -91,8 +95,8 @@ function megalithInit()
     while(megalith.length < 4)
     {
         megalith.push({
-            pos: [Math.floor(Math.random() * ((canvas.width - 40) + 1)) + 10,
-                Math.floor(Math.random() * ((canvas.height - 40) + 1)) + 10 + megalith.length],
+            pos: [Math.floor(Math.random() * ((canvas.width - 130) + 1)) + 10,
+                Math.floor(Math.random() * ((canvas.height - 130) + 1))],
             sprite: new Sprite('img/sprites.png', [0, 217], [55, 45], 0, [0, 1])
         });
     }
@@ -122,6 +126,8 @@ function update(dt) {
         });
     }
 
+    checkMannaMeg();
+
     checkCollisions();
 
     scoreEl.innerHTML = score;
@@ -130,18 +136,62 @@ function update(dt) {
 
 function handleInput(dt) {
     if(input.isDown('DOWN') || input.isDown('s')) {
+        for (var i = 0; i < megalith.length; i++)
+        {
+            var pos1 = megalith[i].pos;
+            var size1 = megalith[i].sprite.size;
+
+            if (boxCollides(player.pos, player.sprite.size, pos1, size1)
+            && (pos1[1] > player.pos[1]))
+            {
+                return;
+            }
+        }
         player.pos[1] += playerSpeed * dt;
     }
 
     if(input.isDown('UP') || input.isDown('w')) {
+        for (var i = 0; i < megalith.length; i++)
+        {
+            var pos1 = megalith[i].pos;
+            var size1 = megalith[i].sprite.size;
+
+            if (boxCollides(player.pos, player.sprite.size, pos1, size1)
+            && (pos1[1] < player.pos[1]))
+            {
+                return;
+            }
+        }
         player.pos[1] -= playerSpeed * dt;
     }
 
     if(input.isDown('LEFT') || input.isDown('a')) {
+        for (var i = 0; i < megalith.length; i++)
+        {
+            var pos1 = megalith[i].pos;
+            var size1 = megalith[i].sprite.size;
+
+            if (boxCollides(player.pos, player.sprite.size, pos1, size1)
+            && (pos1[0] < player.pos[0]))
+            {
+                return;
+            }
+        }
         player.pos[0] -= playerSpeed * dt;
     }
 
     if(input.isDown('RIGHT') || input.isDown('d')) {
+        for (var i = 0; i < megalith.length; i++)
+        {
+            var pos1 = megalith[i].pos;
+            var size1 = megalith[i].sprite.size;
+
+            if (boxCollides(player.pos, player.sprite.size, pos1, size1)
+            && (pos1[0] > player.pos[0]))
+            {
+                return;
+            }
+        }
         player.pos[0] += playerSpeed * dt;
     }
 
@@ -186,6 +236,20 @@ function updateEntities(dt) {
     }
 
     for(var i=0; i<enemies.length; i++) {
+        var pos = enemies[i].pos;
+        var size = enemies[i].sprite.size;
+
+        for (var k = 0; k < megalith.length; k++)
+        {
+            var pos3 = megalith[k].pos;
+            var size3 = megalith[k].sprite.size;
+
+            if (boxCollides(pos, size, pos3, size3))
+            {
+                pos[1] += 20;
+                break;
+            }
+        }
         enemies[i].pos[0] -= enemySpeed * dt;
         enemies[i].sprite.update(dt);
 
@@ -222,24 +286,64 @@ function boxCollides(pos, size, pos2, size2) {
                     pos2[0] + size2[0], pos2[1] + size2[1]);
 }
 
+function checkMannaMeg()
+{
+    for (var k = 0; k < manna.length; k++)
+    {
+        var pos3 = manna[k].pos;
+        var size3 = manna[k].sprite.size;
+
+        for (var l = 0; l < megalith.length; l++)
+        {
+            var pos4 = megalith[l].pos;
+            var size4 = megalith[l].sprite.size;
+
+
+            if (boxCollides(pos3, size3, pos4, size4))
+            {
+                 manna[k].pos[0] += 40;
+                 manna[k].pos[1] += 40;
+            }
+        }
+    }
+}
+
+function checkMannaPlayer()
+{
+    for (var k = 0; k < manna.length; k++)
+    {
+        var pos3 = manna[k].pos;
+        var size3 = manna[k].sprite.size;
+
+        if (boxCollides(player.pos, player.sprite.size, pos3, size3))
+        {
+            manna[k].pos[0] += 200;
+            manna[k].pos[1] -= 100;
+        }
+    }
+}
+
+function checkMegPlayer()
+{
+    for (var k = 0; k < megalith.length; k++)
+    {
+        var pos3 = megalith[k].pos;
+        var size3 = megalith[k].sprite.size;
+
+        if (boxCollides(player.pos, player.sprite.size, pos3, size3))
+        {
+            megalith[k].pos[0] += 100;
+            megalith[k].pos[1] += 100;
+        }
+    }
+}
+
 function checkCollisions() {
     checkPlayerBounds();
     
     for(var i=0; i<enemies.length; i++) {
         var pos = enemies[i].pos;
         var size = enemies[i].sprite.size;
-
-        for (var k = 0; k < megalith.length; k++)
-        {
-            var pos3 = megalith[k].pos;
-            var size3 = megalith[k].sprite.size;
-
-            if (boxCollides(pos, size, pos3, size3))
-            {
-                pos[1] += 20;
-                break;
-            }
-        }
 
         top: for(var j=0; j<bullets.length; j++) {
             var pos2 = bullets[j].pos;
@@ -301,27 +405,6 @@ function checkPlayerBounds() {
     }
     else if(player.pos[1] > canvas.height - player.sprite.size[1]) {
         player.pos[1] = canvas.height - player.sprite.size[1];
-    }
-
-    for (var k = 0; k < megalith.length; k++)
-    {
-        var pos3 = megalith[k].pos;
-        var size3 = megalith[k].sprite.size;
-
-        if (boxCollides(player.pos, player.sprite.size, pos3, size3))
-        {
-            if ((player.pos[0] < pos3[0]) && (player.pos[0] > pos3[0] - player.sprite.size[0]))
-            {
-                player.pos[0] = pos3[0] - player.sprite.size[0];
-            }
-            else 
-            if ((player.pos[0] > pos3[0]) && (player.pos[0] < pos3[0] + player.sprite.size[0]))
-            {
-                player.pos[0] = pos3[0] + player.sprite.size[0];
-            }
-
-            break;
-        }
     }
 
     for (var l = 0; l < manna.length; l++)
