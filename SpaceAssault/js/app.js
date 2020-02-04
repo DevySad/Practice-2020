@@ -34,6 +34,8 @@ function init() {
         reset();
     });
 
+    megalithInit();
+
     reset();
     lastTime = Date.now();
     main();
@@ -53,6 +55,7 @@ var player = {
 var bullets = [];
 var enemies = [];
 var explosions = [];
+var megalith = [];
 
 var lastFire = Date.now();
 var gameTime = 0;
@@ -65,6 +68,18 @@ var scoreEl = document.getElementById('score');
 var playerSpeed = 200;
 var bulletSpeed = 500;
 var enemySpeed = 100;
+
+function megalithInit() 
+{
+    while(megalith.length < 3)
+    {
+        megalith.push({
+            pos: [Math.floor(Math.random() * ((canvas.width - 40) + 1)) + 10,
+                Math.floor(Math.random() * ((canvas.height - 40) + 1)) + 10 + megalith.length],
+            sprite: new Sprite('img/sprites.png', [0, 217], [55, 45], 0)
+        });
+    }
+};
 
 function update(dt) {
     gameTime += dt;
@@ -161,6 +176,8 @@ function updateEntities(dt) {
             i--;
         }
     }
+
+    megalith[0].sprite.update(dt);
 }
 
 function collides(x, y, r, b, x2, y2, r2, b2) {
@@ -182,9 +199,33 @@ function checkCollisions() {
         var pos = enemies[i].pos;
         var size = enemies[i].sprite.size;
 
-        for(var j=0; j<bullets.length; j++) {
+        for (var k = 0; k < megalith.length; k++)
+        {
+            var pos3 = megalith[k].pos;
+            var size3 = megalith[k].sprite.size;
+
+            if (boxCollides(pos, size, pos3, size3))
+            {
+                pos[1] += 20;
+                break;
+            }
+        }
+
+        top: for(var j=0; j<bullets.length; j++) {
             var pos2 = bullets[j].pos;
             var size2 = bullets[j].sprite.size;
+
+            for (var k = 0; k < megalith.length; k++)
+            {
+                var pos3 = megalith[k].pos;
+                var size3 = megalith[k].sprite.size;
+
+                if (boxCollides(pos2, size2, pos3, size3))
+                {
+                    bullets.splice(j, 1);
+                    break top;
+                }
+            }
 
             if(boxCollides(pos, size, pos2, size2)) {
                 enemies.splice(i, 1);
@@ -215,6 +256,9 @@ function checkCollisions() {
 }
 
 function checkPlayerBounds() {
+    speed = 200;
+    playerSpeed = speed;
+
     if(player.pos[0] < 0) {
         player.pos[0] = 0;
     }
@@ -227,6 +271,28 @@ function checkPlayerBounds() {
     }
     else if(player.pos[1] > canvas.height - player.sprite.size[1]) {
         player.pos[1] = canvas.height - player.sprite.size[1];
+    }
+
+    for (var k = 0; k < megalith.length; k++)
+    {
+        var pos3 = megalith[k].pos;
+        var size3 = megalith[k].sprite.size;
+
+        if (boxCollides(player.pos, player.sprite.size, pos3, size3))
+        {
+            if ((player.pos[0] < pos3[0]) && (player.pos[0] > pos3[0] - player.sprite.size[0]))
+            {
+                player.pos[0] = pos3[0] - player.sprite.size[0];
+            }
+            else 
+            if ((player.pos[0] > pos3[0]) && (player.pos[0] < pos3[0] + player.sprite.size[0]))
+            {
+                player.pos[0] = pos3[0] + player.sprite.size[0];
+            }
+
+            break;
+        }
+        
     }
 }
 
@@ -241,6 +307,7 @@ function render() {
     renderEntities(bullets);
     renderEntities(enemies);
     renderEntities(explosions);
+    renderEntities(megalith);
 };
 
 function renderEntities(list) {
