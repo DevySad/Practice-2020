@@ -285,9 +285,9 @@ function updateEntities(dt) {
                 enemies[i].sprite.size, pos3, size3))
             {  
                  if (enemies[i].pos[1] > pos3[1] + 5)
-                  enemies[i].pos[1] += 1;
+                  enemies[i].pos[1] += enemySpeed * dt;
                  else
-                   enemies[i].pos[1] -= 1;  
+                   enemies[i].pos[1] -= enemySpeed * dt;  
               
             }
         }
