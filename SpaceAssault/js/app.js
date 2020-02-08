@@ -271,9 +271,7 @@ function updateEntities(dt) {
         }
     }
 
-    for(var i=0; i<enemies.length; i++) {
-        enemies[i].pos[0] -= enemySpeed * dt;
-        enemies[i].sprite.update(dt);
+    outside: for(var i=0; i<enemies.length; i++) {
 
         //Переделал обход мегалитов
         for (var k = 0; k < megalith.length; k++)
@@ -281,16 +279,20 @@ function updateEntities(dt) {
             var pos3 = megalith[k].pos;
             var size3 = megalith[k].sprite.size;
 
-            if (boxCollides([enemies[i].pos[0] - 50, enemies[i].pos[1]], 
+            if (boxCollides([enemies[i].pos[0], enemies[i].pos[1]], 
                 enemies[i].sprite.size, pos3, size3))
             {  
                  if (enemies[i].pos[1] > pos3[1] + 5)
                   enemies[i].pos[1] += enemySpeed * dt;
                  else
-                   enemies[i].pos[1] -= enemySpeed * dt;  
-              
+                   enemies[i].pos[1] -= enemySpeed * dt; 
+                   
+                continue outside;       
             }
         }
+
+        enemies[i].pos[0] -= enemySpeed * dt;
+        enemies[i].sprite.update(dt);
 
         if(enemies[i].pos[0] + enemies[i].sprite.size[0] < 0) {
             enemies.splice(i, 1);
